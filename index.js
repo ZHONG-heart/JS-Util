@@ -62,4 +62,8 @@ class Util {
             range.select();
         }
     }
+    static dataType(data){
+        /* String Number Object Array Date Boolean Function Null Undefined*/
+        return Object.prototype.toString.call(data).slice(8, -1)
+    }
 }
