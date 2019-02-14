@@ -37,7 +37,7 @@ class Util {
         });
     }
     static getQueryParameter (name) {
-        /*获取某个请求参数*/
+        /*获取某个URL请求参数*/
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (results == null) {
             return '';
@@ -45,7 +45,24 @@ class Util {
             return results[1] || '';
         }
     }
-
+    static delParamsUrl(url, name){
+        /*删除某个URL的参数*/
+        var baseUrl = url.split('?')[0] + '?';
+        var query = url.split('?')[1];
+        if (query.indexOf(name)>-1) {
+            var obj = {}
+            var arr = query.split("&");
+            for (var i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].split("=");
+            obj[arr[i][0]] = arr[i][1];
+            };
+            delete obj[name];
+            var url = baseUrl + JSON.stringify(obj).replace(/[\"\{\}]/g,"").replace(/\:/g,"=").replace(/\,/g,"&");
+            return url
+        }else{
+            return url;
+        }
+    }   
     static selectText(element) {
         /*选中当前操作元素的文本*/
         let range, selection;
