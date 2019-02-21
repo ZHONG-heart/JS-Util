@@ -82,5 +82,9 @@ class Util {
     static dataType(data){
         /* String Number Object Array Date Boolean Function Null Undefined*/
         return Object.prototype.toString.call(data).slice(8, -1)
+    },
+//      将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组
+    static ArrFlatSort(arr){
+        return [...new Set(arr.flat(Infinity))].sort((a,b)=>{ return a-b})
     }
 }
