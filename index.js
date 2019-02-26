@@ -87,4 +87,21 @@ class Util {
     static ArrFlatSort(arr){
         return [...new Set(arr.flat(Infinity))].sort((a,b)=>{ return a-b})
     }
+
+//实现destructuringArray方法
+//效果如下
+// destructuringArray( [1,[2,4],3], "[a,[b],c]" );
+
+// result // { a:1, b:2, c:3 }
+    static destructuringArray(arr,str){
+        let fn = `
+        const ${str} = ${JSON.stringify(arr)};
+        const arr=${JSON.stringify(str)}.match(/[a-z]+/ig);
+        const obj={};
+        for(let i of arr){
+            obj[i]=eval(i);
+        }
+        return obj;`
+        return new Function('',fn)()
+    }
 }
