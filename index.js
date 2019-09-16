@@ -104,4 +104,29 @@ class Util {
         return obj;`
         return new Function('',fn)()
     }
+
+    convert(str, mark) {
+            let _after = ''
+            let _array = str.split(mark)
+            if (_array.length < 3) {
+                return str
+            }
+            let _pop = _array.pop()
+            let _shift = _array.shift()
+            let _length = _array.length
+            console.log(_array, _length, _pop)
+            for (let i = 0; i < _length; i++) {
+                if (i % 2 === 0) {
+                    if (mark === '$') {
+                        _after += `<i>${_array[i]}</i>`
+                    } else if (mark === '*') {
+                        _after += `<strong>${_array[i]}</strong>`
+                    }
+                    // 自己添加转换的标签
+                } else {
+                    _after += _array[i]
+                }
+            }
+            return `${_shift}${_after}${_pop}`
+        }
 }
