@@ -137,5 +137,5 @@ class Util {
   }
 }
 if (exports) {
-  exports.Util = Util;
+  module.exports = { Util };
 }
