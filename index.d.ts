@@ -1,4 +1,4 @@
-declare class Util {
+declare interface Util {
   static formatDate(date: Date | number, formatter: string): string;
   static getQueryParameter(name: string): string;
   static delParamsUrl(url: string, name: string): string;
