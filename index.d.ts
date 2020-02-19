@@ -1,4 +1,4 @@
-export declare class Util {
+declare class Util {
   static formatDate(date: Date | number, formatter: string): string;
   static getQueryParameter(name: string): string;
   static delParamsUrl(url: string, name: string): string;
@@ -10,4 +10,7 @@ export declare class Util {
     str: string
   ): { [key: string]: string };
   convert(str: string, mark: string): string;
+}
+export declare namespace util {
+  Util;
 }
