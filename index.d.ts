@@ -1,4 +1,4 @@
-declare interface Util {
+export declare class Util {
   static formatDate(date: Date | number, formatter: string): string;
   static getQueryParameter(name: string): string;
   static delParamsUrl(url: string, name: string): string;
@@ -10,7 +10,4 @@ declare interface Util {
     str: string
   ): { [key: string]: string };
   convert(str: string, mark: string): string;
-}
-if (exports) {
-  exports.Util = Util;
 }
