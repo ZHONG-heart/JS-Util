@@ -15,6 +15,7 @@
   ],
   "author": "zhong-heart",
   "license": "MIT",
+  "typings": "./index.d.ts",
   "bugs": {
     "url": "https://github.com/ZHONG-heart/JS-Util/issues"
   },
