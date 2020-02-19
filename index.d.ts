@@ -1,16 +1,21 @@
-declare class Util {
-  static formatDate(date: Date | number, formatter: string): string;
-  static getQueryParameter(name: string): string;
-  static delParamsUrl(url: string, name: string): string;
-  static selectText(element: any): void;
-  static dataType(data: any): string;
-  static ArrFlatSort(arr: Array<any>): Array<any>;
-  static destructuringArray(
+declare module "util" {
+  function formatDate(date: Date | number, formatter: string): string;
+  namespace formatDate {}
+  function getQueryParameter(name: string): string;
+  namespace getQueryParameter {}
+  function delParamsUrl(url: string, name: string): string;
+  namespace delParamsUrl {}
+  function selectText(element: any): void;
+  namespace selectText {}
+  function dataType(data: any): string;
+  namespace dataType {}
+  function ArrFlatSort(arr: Array<any>): Array<any>;
+  namespace ArrFlatSort {}
+  function destructuringArray(
     arr: Array<any>,
     str: string
   ): { [key: string]: string };
-  convert(str: string, mark: string): string;
-}
-export declare namespace util {
-  Util;
+  namespace destructuringArray {}
+  function convert(str: string, mark: string): string;
+  namespace convert {}
 }
