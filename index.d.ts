@@ -1,4 +1,4 @@
-declare module "js-util" {
+export declare module "js-util" {
   export function formatDate(date: Date | number, formatter: string): string;
   namespace formatDate {}
   export function getQueryParameter(name: string): string;
