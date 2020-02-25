@@ -136,7 +136,7 @@
 //     return `${_shift}${_after}${_pop}`;
 //   }
 // }
-function formatDate(date, formatter) {
+export function formatDate(date, formatter) {
   /*
    * 格式化日期
    * @param date Date or timestamp
@@ -146,10 +146,10 @@ function formatDate(date, formatter) {
     date = new Date(date);
   }
 
-  const transform = function(value) {
+  const transform = function (value) {
     return value < 10 ? "0" + value : value;
   };
-  return formatter.replace(/^YYYY|MM|DD|hh|mm|ss|ms/g, function(match) {
+  return formatter.replace(/^YYYY|MM|DD|hh|mm|ss|ms/g, function (match) {
     switch (match) {
       case "YYYY":
         return transform(date.getFullYear());
@@ -168,5 +168,3 @@ function formatDate(date, formatter) {
     }
   });
 }
-
-module.exports = { formatDate };
